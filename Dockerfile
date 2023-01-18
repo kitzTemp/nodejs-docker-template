@@ -1,9 +1,9 @@
-FROM node:8.2.1-alpine
+FROM --platform=linux/amd64 node:16.19.0-alpine
 
-COPY . /app
 WORKDIR /app
+COPY ./app ./
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 1980
 
-ENTRYPOINT npm run start
+CMD "npm" "start"
